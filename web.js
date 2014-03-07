@@ -23,8 +23,8 @@ output = rawoutput.toString('utf8',0,len);
 
 
 app.get('/', function(request, response) {
-  response.send('Hello World 2!');
-//  response.send(output);
+//  response.send('Hello World 2!');
+  response.send(output);
 });
 
 
