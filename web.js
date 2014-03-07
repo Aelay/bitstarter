@@ -17,7 +17,10 @@ fs.readFile('index.html', 'utf8', function (err, data) {
 
 len = rawoutput.length-1;
 
-//I wanted to get rid of \n at the end by reading length-1 bytes, but somehow, whatever number I write as last argument for .toString, the result in output is always the same.
+/* I wanted to get rid of \n at the end by reading
+ * length-1 bytes, but somehow, whatever number I
+ * write as last argument for .toString,
+ * the result in output is always the same. */
 
 output = rawoutput.toString('utf8',0,len);
 
