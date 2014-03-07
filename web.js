@@ -5,11 +5,14 @@ app.use(express.logger());
 
 var maxBuffersize = 100;
 
-var output = new String;
+var output = "";
 var rawoutput = new Buffer(maxBuffersize);
 
-fs.readFile('index.html', rawoutput);
-output = rawoutput.toString();              
+fs.readFile('index.html', function (err, data) {
+  if (err) throw err;
+  rawoutput=data;
+});
+output = rawoutput.toString();
 
 app.get('/', function(request, response) {
 //  response.send('Hello World 2!');
